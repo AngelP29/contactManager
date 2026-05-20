@@ -1,13 +1,56 @@
+//following code takes inputs for login, and adds visual feedback based on input
 const loginSide = document.getElementById("inputs");
 
 loginSide.addEventListener("submit", function(event){
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
 
-    if(!username || !password){
-        document.getElementById("error-message").textContent = "❌ Please fill in all the fields ❌";
+    const usernameIcon = document.getElementById("username-icon");
+    const passwordIcon = document.getElementById("password-icon");
+
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    let valid = true;
+
+    //username validation
+    if(!username){
+        usernameInput.classList.add("invalid");
+        usernameInput.classList.remove("valid");
+
+        usernameIcon.textContent = "❌";
+        usernameIcon.className = "icon-error";
+
+        valid = false;
+    } else{
+        usernameInput.classList.add("valid");
+        usernameInput.classList.remove("invalid");
+
+        usernameIcon.textContent = "✅";
+        usernameIcon.className = "icon-success";
+    }
+
+    //password validation
+    if(!password){
+        passwordInput.classList.add("invalid");
+        passwordInput.classList.remove("valid");
+
+        passwordIcon.textContent = "❌";
+        passwordIcon.className = "icon-error";
+
+        valid = false;
+    } else{
+        passwordInput.classList.add("valid");
+        passwordInput.classList.remove("invalid");
+
+        passwordIcon.textContent = "✅";
+        passwordIcon.className = "icon-success";
+    }
+
+    if(!valid){
+        document.getElementById("error-message").textContent = "❌ Please fill in all fields ❌";
     } else{
         document.getElementById("error-message").textContent = "";
     }
