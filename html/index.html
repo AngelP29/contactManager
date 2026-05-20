@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manager</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css"> <!-- related CSS file -->
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+
+        </nav>
+        <header id="main-header">
+            <h1 id="header">Personal Contact Manager</h1>
+        </header>
+
+        <main>
+            <section id="home-page">
+                <h2>Welcome!</h2>
+                <p>This is your personal contact manager for COP 4331C</p>
+                <div class="container">
+                    <div class="login-side">
+                        <form id="inputs">
+                            <h3>Log in to your account</h3>
+                            <label>Username:</label><input type="text" id="username" placeholder="Username"><br>
+                            <label>Password:</label><input type="password" id="password" placeholder="Password"><br>
+                            <button type="submit" class="btn">Log In</button>
+
+                            <!-- <a href="dashboard.html" class="btn">Log In</a> -->
+                        </form>
+                        <p id="error-message" style="color: red;"></p>
+                    </div>
+
+                    <div class="signup-side">
+                        <h3>Don't have an accout?</h3>
+                        <a href="signup.html" class="btn">Sign Up</a>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Copyright &copy; 2026 Contact Manager. All Rights Reserved</p>
+        </footer>
+
+        <script src="../js/index.js"></script> <!-- related JS file -->
+
+        <div style="margin-top:500px"></div>
+    </div>
+</body>
+</html>
