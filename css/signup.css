@@ -67,6 +67,33 @@ input{
     border-radius: 8px;
     border: 1px solid #ccc;
 }
+
+.input-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.valid{
+    border: 2px solid green;
+}
+
+.invalid{
+    border: 2px solid red;
+}
+
+.icon-error{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon-success{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
 /* ********************************** */
 
 .footer{
