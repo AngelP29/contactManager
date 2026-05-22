@@ -1,1 +1,1 @@
-[Contact Manager](cop4331smallproject.com)
+[Contact Manager](http://cop4331smallproject.com/)
