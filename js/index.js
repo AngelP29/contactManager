@@ -83,7 +83,7 @@ loginSide.addEventListener("submit", async function(event){
         console.log(data);
 
         if(data.id > 0){
-            window.location.href = "../html/dashboard.html";
+            window.location.href = "dashboard.html";
         } else{
             document.getElementById("error-message").textContent = "❌ Invalid username of password ❌";
         }
