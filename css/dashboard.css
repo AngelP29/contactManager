@@ -40,7 +40,12 @@ nav .btn{
 }
 
 nav .btn:hover{
-    background-color: #bcf5fe;
+    background-color: #ff841f;
+}
+
+nav .btn.active{
+    background-color: rgb(161, 11, 138);
+    font-weight: bold;
 }
 
 #searchContact{
