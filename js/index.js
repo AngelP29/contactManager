@@ -69,7 +69,7 @@ loginSide.addEventListener("submit", async function(event){
     };
 
     try{
-        const response = await fetch("/api/login.php", {
+        const response = await fetch("/api/test.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
