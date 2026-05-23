@@ -1,7 +1,7 @@
 //following code takes inputs for login, and adds visual feedback based on input
-const loginSide = document.getElementById("inputs");
+const signupForm = document.getElementById("inputs");
 
-loginSide.addEventListener("submit", function(event){
+signupForm.addEventListener("submit", async function(event){
     event.preventDefault();
 
     const firstnameInput = document.getElementById("first-name");
@@ -93,5 +93,38 @@ loginSide.addEventListener("submit", function(event){
         document.getElementById("error-message").textContent = "❌ Please fill in all fields ❌";
     } else{
         document.getElementById("error-message").textContent = "";
+    }
+
+    //sign up data sent to API 
+    const registerData = {
+        firstName: firstname,
+        lastName: lastname,
+        login: username,
+        password: password
+    };
+
+    try{
+        const response = await fetch("/api/register.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(registerData)
+        });
+
+        const data = await response.json();
+
+        console.log(data);
+
+        if(data.id > 0){
+            window.location.href = "dashboard.html";
+        } else{
+            document.getElementById("error-message").textContent = `❌ ${data.error} ❌`; //displays actual backend error
+        }
+    } catch(error){
+        console.error(error);
+
+        document.getElementById("error-message").textContent = "❌ Server error ❌";
     }
 });
