@@ -8,6 +8,16 @@ body{
     flex-direction: column;
 }
 
+.wrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
 header{
     color: black;
     text-align: center;
@@ -99,10 +109,6 @@ main .btn:active{
 }
 
 .footer{
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 0;
     background-color: #11178b;
     padding: 15px;
     text-align: center;
