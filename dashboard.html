@@ -13,10 +13,11 @@
                 <button type="button" id="add-contact" class="btn">Add</button>
                 <button type="button" id="delete-contact" class="btn">Delete</button>
                 <button type="button" id="update-contact" class="btn">Update</button>
+                <button type="button" id="confirm-delete" class="btn-confirm" style="display: none;">Confirm Delete</button>
             </div>
 
             <div class="nav-right">
-                <form id="search-input">
+                <form id="search-form">
                     <input type="text" id="searchContact" placeholder="Search Contact">
                     <button type="submit" class="btn">Search</button>
                 </form>
@@ -32,8 +33,30 @@
 
         <main>
             <section id="dashboard-content">
-                <div id="contact-list">
+                <div id="delete-bar" class="delete-bar" style="display: none;">
+                    <span id="delete-bar-text"> Select contacts using the checkboxes, then click Delete Selected</span>
+                </div>
 
+                <!-- contacts table -->
+                <div class="table-wrapper">
+                    <table id="contacts-table">
+                        <thead>
+                            <tr>
+                                <th style="display: none;"></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                                <th>E-mail</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="contact-body">
+                            <!-- rows inserted here by JS -->
+                            <tr>
+                                <td colspan="5">No contacts found.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </main>
