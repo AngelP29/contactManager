@@ -91,6 +91,7 @@ signupForm.addEventListener("submit", async function(event){
 
     if(!valid){
         document.getElementById("error-message").textContent = "❌ Please fill in all fields ❌";
+        return;
     } else{
         document.getElementById("error-message").textContent = "";
     }
