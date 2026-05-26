@@ -10,12 +10,16 @@
     <div class="wrapper">
         <nav class="navbar">
             <div class="nav-left">
-                <button type="button" class="btn">Add</button>
-                <button type="button" class="btn">Delete</button>
+                <button type="button" id="add-contact" class="btn">Add</button>
+                <button type="button" id="delete-contact" class="btn">Delete</button>
+                <button type="button" id="update-contact" class="btn">Update</button>
             </div>
 
             <div class="nav-right">
-                <input type="text" id="searchContact" placeholder="Search Contact">
+                <form id="search-input">
+                    <input type="text" id="searchContact" placeholder="Search Contact">
+                    <button type="submit" class="btn">Search</button>
+                </form>
             </div>
         </nav>
 
@@ -27,9 +31,10 @@
         </header>
 
         <main>
-            <section id="home-page">
-                <h2>Welcome!</h2>
-                <p>This is your personal dashboard</p>
+            <section id="dashboard-content">
+                <div id="contact-list">
+
+                </div>
             </section>
         </main>
 
