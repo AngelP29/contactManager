@@ -14,10 +14,10 @@
 	{
 		$stmt = $conn->prepare("SELECT ContactID, FirstName, LastName, Phone, Email 
 			 FROM CONTACTS 
-			 WHERE (FirstName LIKE ? OR LastName LIKE ?)
+			 WHERE (FirstName LIKE ? OR LastName LIKE ? OR CONCAT(FirstName, ' ', LastName) LIKE ?)
 			 AND UserID=?");
 		$search = "%" . $inData["search"] . "%";
-		$stmt->bind_param("ssi", $search, $search, $inData["userId"]);
+		$stmt->bind_param("sssi", $search, $search, $search, $inData["userId"]);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
