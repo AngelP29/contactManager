@@ -3,7 +3,19 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
 }
 
 header{
@@ -46,6 +58,33 @@ input{
     border-radius: 8px;
     border: 1px solid #ccc;
 }
+
+.input-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.valid{
+    border: 2px solid green;
+}
+
+.invalid{
+    border: 2px solid red;
+}
+
+.icon-error{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon-success{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
 /* ************************************* */
 
 main .btn{
@@ -70,10 +109,6 @@ main .btn:active{
 }
 
 .footer{
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 0;
     background-color: #11178b;
     padding: 15px;
     text-align: center;

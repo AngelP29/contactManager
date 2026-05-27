@@ -23,8 +23,19 @@
                     <div class="login-side">
                         <form id="inputs">
                             <h3>Log in to your account</h3>
-                            <label>Username:</label><input type="text" id="username" placeholder="Username"><br>
-                            <label>Password:</label><input type="password" id="password" placeholder="Password"><br>
+                            
+                            <label>Username:</label>
+                            <div class="input-container">
+                                <input type="text" id="username" placeholder="Username">
+                                <span id="username-icon"></span>
+                            </div>
+
+                            <label>Password:</label>
+                            <div class="input-container">
+                                <input type="password" id="password" placeholder="Password">
+                                <span id="password-icon"></span>
+                            </div>
+
                             <button type="submit" class="btn">Log In</button>
 
                             <!-- <a href="dashboard.html" class="btn">Log In</a> -->
@@ -47,7 +58,7 @@
 
         <script src="../js/index.js"></script> <!-- related JS file -->
 
-        <div style="margin-top:500px"></div>
+        <!-- <div style="margin-top:500px"></div> -->
     </div>
 </body>
 </html>

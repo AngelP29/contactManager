@@ -1,19 +1,59 @@
 //following code takes inputs for login, and adds visual feedback based on input
-const loginSide = document.getElementById("inputs");
+const signupForm = document.getElementById("inputs");
 
-loginSide.addEventListener("submit", async function(event){
+signupForm.addEventListener("submit", async function(event){
     event.preventDefault();
 
+    const firstnameInput = document.getElementById("first-name");
+    const lastnameInput = document.getElementById("last-name");
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
 
+    const firstnameIcon = document.getElementById("firstname-icon");
+    const lastnameIcon = document.getElementById("lastname-icon");
     const usernameIcon = document.getElementById("username-icon");
     const passwordIcon = document.getElementById("password-icon");
 
+    const firstname = firstnameInput.value;
+    const lastname = lastnameInput.value;
     const username = usernameInput.value;
     const password = passwordInput.value;
 
     let valid = true;
+
+    //first name validation
+    if(!firstname){
+        firstnameInput.classList.add("invalid");
+        firstnameInput.classList.remove("valid");
+
+        firstnameIcon.textContent = "❌";
+        firstnameIcon.className = "icon-error";
+
+        valid = false;
+    } else{
+        firstnameInput.classList.add("valid");
+        firstnameInput.classList.remove("invalid");
+
+        firstnameIcon.textContent = "✅";
+        firstnameIcon.className = "icon-success";
+    }
+
+    //last name validation
+    if(!lastname){
+        lastnameInput.classList.add("invalid");
+        lastnameInput.classList.remove("valid");
+
+        lastnameIcon.textContent = "❌";
+        lastnameIcon.className = "icon-error";
+
+        valid = false;
+    } else{
+        lastnameInput.classList.add("valid");
+        lastnameInput.classList.remove("invalid");
+
+        lastnameIcon.textContent = "✅";
+        lastnameIcon.className = "icon-success";
+    }
 
     //username validation
     if(!username){
@@ -56,26 +96,22 @@ loginSide.addEventListener("submit", async function(event){
         document.getElementById("error-message").textContent = "";
     }
 
-    //the following will replace frontend only validation with API login request
-    //we need Digital Ocean to test API and move forward, so this is just a start
-
-    //Ex:
-    //fetch("/LAMPAI/login.php")
-
-    //login data sent to API 
-    const loginData = {
+    //sign up data sent to API 
+    const registerData = {
+        firstName: firstname,
+        lastName: lastname,
         login: username,
         password: password
     };
 
     try{
-        const response = await fetch("/api/login.php", {
+        const response = await fetch("/api/register.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
 
-            body: JSON.stringify(loginData)
+            body: JSON.stringify(registerData)
         });
 
         const data = await response.json();
@@ -85,12 +121,11 @@ loginSide.addEventListener("submit", async function(event){
         if(data.id > 0){
             window.location.href = "dashboard.html";
         } else{
-            document.getElementById("error-message").textContent = "❌ Invalid username of password ❌";
+            document.getElementById("error-message").textContent = `❌ ${data.error} ❌`; //displays actual backend error
         }
     } catch(error){
         console.error(error);
 
         document.getElementById("error-message").textContent = "❌ Server error ❌";
     }
-
 });
