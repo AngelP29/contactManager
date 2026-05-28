@@ -24,9 +24,6 @@
             </div>
         </nav>
 
-        <!-- must add 6th button which confirms delete -->
-        <!-- also verify if we have all 6 buttons -->
-
         <header id="main-header">
             <h1 id="header">Dashboard</h1>
         </header>
@@ -65,7 +62,76 @@
             <p>Copyright &copy; 2026 Contact Manager. All Rights Reserved</p>
         </footer>
 
-        <!-- <div style="margin-top:500px"></div> -->
+        <!-- add contact -->
+        <div class="action-overlay" id="add-choice" style="display: none;">
+            <div class="popup">
+                <h2>Add Contact</h2>
+                <div class="action-form">
+                    <label for="add-firstname">First Name</label>
+                    <input type="text" id="add-firstname" placeholder="First Name">
+                </div>
+                <div class="action-form">
+                    <label for="add-lastname">Last Name</label>
+                    <input type="text" id="add-lastname" placeholder="Last Name">
+                </div>
+                <div class="action-form">
+                    <label for="add-phone">Phone</label>
+                    <input type="tel" id="add-phone" placeholder="Phone">
+                </div>
+                <div class="action-form">
+                    <label for="add-email">Email</label>
+                    <input type="email" id="add-email" placeholder="Email">
+                </div>
+                <div class="action-footer">
+                    <button type="button" class="action-cancel">Cancel</button>
+                    <button type="button" class="action-save">Save Contact</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- update contact -->
+        <div class="action-overlay" id="update-choice" style="display: none;">
+            <div class="popup">
+                <h2>Update Contact</h2>
+                <div class="action-form">
+                    <label for="update-firstname">First Name</label>
+                    <input type="text" id="update-firstname" placeholder="First Name">
+                </div>
+                <div class="action-form">
+                    <label for="update-lastname">Last Name</label>
+                    <input type="text" id="update-lastname" placeholder="Last Name">
+                </div>
+                <div class="action-form">
+                    <label for="update-phone">Phone</label>
+                    <input type="tel" id="update-phone" placeholder="Phone">
+                </div>
+                <div class="action-form">
+                    <label for="update-email">Email</label>
+                    <input type="email" id="update-email" placeholder="Email">
+                </div>
+                <div class="action-footer">
+                    <button type="button" class="action-cancel">Cancel</button>
+                    <button type="button" class="action-save">Update Contact</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- confirm delete -->
+        <div class="action-overlay" id="confirm-delete-popup" style="display: none;">
+            <div class="popup">
+                <h2>Confirm Deletion</h2>
+                <p class="confirm-text">You are about to permanently delete:</p>
+                <p class="selected-names" id="selected-names">-</p>
+                <p class="confirm-text">This action cannot be undone.</p>
+                <div class="action-footer">
+                    <button type="button" class="action-cancel">Cancel</button>
+                    <button type="button" class="action-delete">Delete Contact</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="../js/dashboard.js"></script>
+
 </body>
 </html>
