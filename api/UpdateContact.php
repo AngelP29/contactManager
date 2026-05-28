@@ -18,7 +18,7 @@
         }
         else
         {
-            returnWithError("No Contact Found");
+            returnWithError("No Contact Found, contact not updated");
         }
         $stmt->close();
         $conn->close();
