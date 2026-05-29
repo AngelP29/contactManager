@@ -1,3 +1,10 @@
+//function to load contacts automatically into the table
+window.addEventListener('DOMContentLoaded', loadContacts);
+
+function loadContacts(){
+
+}
+
 //open add popup
 function openAdd(){
     closeAll();
