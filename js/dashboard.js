@@ -1,8 +1,42 @@
 //function to load contacts automatically into the table
 window.addEventListener('DOMContentLoaded', loadContacts);
 
-function loadContacts(){
+async function loadContacts(){
+    const userID = 1; //temporarily hardcoded
 
+    try{
+        const response = await fetch('/api/SearchContact.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                search: "",
+                userId: userID
+            })
+        });
+
+        const data = await response.json();
+
+        if(data.error){
+            return;
+        }
+
+        const tbody = document.getElementById('contact-body');
+        tbody.innerHTML = '';
+
+        for(const contact of data.results){
+            addRowToTable(
+                contact.firstName,
+                contact.lastName,
+                contact.phone,
+                contact.email
+            );
+        }
+
+    } catch(error){
+        console.log(error);
+    }
 }
 
 //open add popup
