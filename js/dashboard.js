@@ -126,10 +126,9 @@ async function addContact(){
         }
 
     } catch(error){
-        console.error(error);
+        console.error("Add Contact Error:", error);
 
-        alert("Server error");
-        //document.getElementById("error-message").textContent = "❌ Server error ❌";
+        alert(error.message);
     }
 
 }
