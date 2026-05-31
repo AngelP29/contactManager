@@ -3,55 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Manager</title>
+    <title>UCF Contacts - Sign Up</title>
     <link rel="stylesheet" type="text/css" href="../css/signup.css"> <!-- related CSS file -->
 </head>
 <body>
     <div class="wrapper">
-        <nav>
-
-        </nav>
-        <header id="main-header">
-            <h1 id="header">Sign Up Page</h1>
-        </header>
 
         <main>
+            <div class="background">
+                <div class="slash"></div>
+            </div>
+
             <section id="signup-page">
-                <h2>Welcome!</h2>
-                <p>This is the sign up page</p>
+
+                <div class="header">
+
+                    <div class="logoContainer">
+                        <span>UCF Contacts</span>
+                    
+                        <img src = "contactLogo.png">
+
+                        <div class="loginText">
+                             <span>Welcome, please login.</span>
+                        </div>
+                
+                    </div>
+
+                </div>
 
                 <div class="container">
                     <div class="sign-up">
                         <form id="inputs">
-                            <h3>Fill out the following</h3>
-
-                            <label>First Name:</label>
+                            <h3>Sign Up!</h3>
+                            
                             <div class="input-container">
-                                <input type="text" id="first-name" placeholder="First Name">
+                                <div class="input-container">First Name:</div>
+                                
+                                <input type="text" id="first-name" placeholder="John"> 
+
                                 <span id="firstname-icon"></span>
                             </div>
 
-                            <label>Last Name:</label>
+                            
                             <div class="input-container">
-                                <input type="text" id="last-name" placeholder="Last Name">
+                                <div class="input-container">Last Name:</div>
+            
+                                <input type="text" id="last-name" placeholder="Doe">
+                            
                                 <span id="lastname-icon"></span>
                             </div>
 
-                            <label>Username:</label>
+                         
                             <div class="input-container">
+                                <div class="input-container">Username:</div>
+                                
                                 <input type="text" id="username" placeholder="Username">
+                            
                                 <span id="username-icon"></span>
                             </div>
 
-                            <label>Password:</label>
+                            
                             <div class="input-container">
+                                <div class="input-container">Password:</div>
+                                
                                 <input type="password" id="password" placeholder="Password">
+                                
                                 <span id="password-icon"></span>
                             </div>
 
+                             
+                            <div class="input-container">
+                                <div class="input-container">Confirm Password:</div>
+                                
+                                <input type="password" id="password" placeholder="Password">
+                                
+                                <span id="password-icon"></span>
+                            </div>
 
+                            <div class="submitBtn">
+                                <button type="submit" class="btn">Sign Up</button>
+                            </div>
                             
-                            <button type="submit" class="btn">Sign Up</button>
                         </form>
                         <p id="error-message" style="color: red;"></p>
                     </div>
@@ -60,13 +92,10 @@
             </section>
         </main>
 
-        <footer class="footer">
-            <p>Copyright &copy; 2026 Contact Manager. All Rights Reserved</p>
-        </footer>
 
         <script src="../js/signup.js"></script> <!-- related JS file -->
 
-        <!-- <div style="margin-top:500px"></div> -->
+        <div style="margin-top:500px"></div>
     </div>
 </body>
 </html>
