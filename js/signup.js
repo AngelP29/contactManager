@@ -136,6 +136,7 @@ signupForm.addEventListener("submit", async function(event){
         console.log(data);
 
         if(data.id > 0){
+            localStorage.setItem("id", data.id); //saves id to browser's local storage 
             window.location.href = "dashboard.html";
         } else{
             document.getElementById("error-message").textContent = `❌ ${data.error} ❌`; //displays actual backend error

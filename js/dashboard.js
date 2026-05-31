@@ -1,8 +1,10 @@
+//read user ID
+const userId = localStorage.getItem("id");
+
 //function to load contacts automatically into the table
 window.addEventListener('DOMContentLoaded', loadContacts);
 
 async function loadContacts(){
-    const userID = 1; //temporarily hardcoded
 
     try{
         const response = await fetch('/api/SearchContact.php', {
@@ -12,7 +14,7 @@ async function loadContacts(){
             },
             body: JSON.stringify({
                 search: "",
-                userId: userID
+                userId: userId
             })
         });
 
@@ -38,6 +40,8 @@ async function loadContacts(){
         console.log(error);
     }
 }
+
+/***** add logout button!!! *****/
 
 //open add popup
 function openAdd(){
@@ -83,8 +87,6 @@ async function addContact(){
     const lastName = document.getElementById('add-lastname').value.trim();
     const phoneNumber = document.getElementById('add-phone').value.trim();
     const emailAddress = document.getElementById('add-email').value.trim();
-
-    const userId = 1;
 
     if(!firstName || !lastName || !phoneNumber || !emailAddress){
         alert('Please fill in all required fields.');
