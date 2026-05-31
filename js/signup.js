@@ -8,19 +8,20 @@ signupForm.addEventListener("submit", async function(event){
     const lastnameInput = document.getElementById("last-name");
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
-    const passwordConfirmationInput = document.getElementById("password-confimation");
+    const passwordConfirmationInput = document.getElementById("password-confirmation");
 
 
     const firstnameIcon = document.getElementById("firstname-icon");
     const lastnameIcon = document.getElementById("lastname-icon");
     const usernameIcon = document.getElementById("username-icon");
     const passwordIcon = document.getElementById("password-icon");
+    const passwordConfIcon = document.getElementById("password-confirmation-icon");
 
     const firstname = firstnameInput.value;
     const lastname = lastnameInput.value;
     const username = usernameInput.value;
     const password = passwordInput.value;
-    const passwordConfirmation = passwordConfirmation.value;
+    const passwordConfirmation = passwordConfirmationInput.value;
 
     let valid = true;
 
@@ -76,12 +77,18 @@ signupForm.addEventListener("submit", async function(event){
     }
 
     //password validation
-    if (!password && !passwordConfirmation){
+    if (!password || !passwordConfirmation){
         passwordInput.classList.add("invalid");
         passwordInput.classList.remove("valid");
 
+        passwordConfirmationInput.classList.add("invalid");
+        passwordConfirmationInput.classList.remove("valid");
+    
         passwordIcon.textContent = "❌";
         passwordIcon.className = "icon-error";
+
+        passwordConfIcon.textContent = "❌";
+        passwordConfIcon.className = "icon-error";
 
         valid = false;
     } else {
@@ -89,8 +96,14 @@ signupForm.addEventListener("submit", async function(event){
         passwordInput.classList.add("valid");
         passwordInput.classList.remove("invalid");
 
+        passwordConfirmationInput.classList.add("valid");
+        passwordConfirmationInput.classList.remove("invalid");
+
         passwordIcon.textContent = "✅";
         passwordIcon.className = "icon-success";
+
+        passwordConfIcon.textContent = "✅";
+        passwordConfIcon.className = "icon-success";
     }
 
     if(!valid){
