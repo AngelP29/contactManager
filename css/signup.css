@@ -105,10 +105,10 @@ main .btn:active{
     background-color: #ffffff;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 30px;
     border-radius: 15px;
-    width: 400px;
+    width: 500px;
     box-shadow: 0 4px 10px #000;
 }
 
@@ -116,7 +116,7 @@ main .btn:active{
     display: flex;
     padding: 10px;
     align-items: stretch;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 input{
