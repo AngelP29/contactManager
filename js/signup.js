@@ -8,6 +8,8 @@ signupForm.addEventListener("submit", async function(event){
     const lastnameInput = document.getElementById("last-name");
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
+    const passwordConfirmationInput = document.getElementById("password-confimation");
+
 
     const firstnameIcon = document.getElementById("firstname-icon");
     const lastnameIcon = document.getElementById("lastname-icon");
@@ -18,6 +20,7 @@ signupForm.addEventListener("submit", async function(event){
     const lastname = lastnameInput.value;
     const username = usernameInput.value;
     const password = passwordInput.value;
+    const passwordConfirmation = passwordConfirmation.value;
 
     let valid = true;
 
@@ -73,7 +76,7 @@ signupForm.addEventListener("submit", async function(event){
     }
 
     //password validation
-    if(!password){
+    if (!password && !passwordConfirmation){
         passwordInput.classList.add("invalid");
         passwordInput.classList.remove("valid");
 
@@ -81,7 +84,8 @@ signupForm.addEventListener("submit", async function(event){
         passwordIcon.className = "icon-error";
 
         valid = false;
-    } else{
+    } else {
+        //TODO validate password with regex 
         passwordInput.classList.add("valid");
         passwordInput.classList.remove("invalid");
 
